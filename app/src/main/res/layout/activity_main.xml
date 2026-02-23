@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎤 Karaoke Mic"
+            android:textColor="#E94560"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Karaoke for YouTube"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Bluetooth Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="#16213E"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvBluetooth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚪ No BT Speaker"
+                android:textColor="#CCCCCC"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <!-- Status Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <View
+                android:id="@+id/statusDot"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@drawable/dot_grey"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ready"
+                android:textColor="#CCCCCC"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!-- Start/Stop Button -->
+        <Button
+            android:id="@+id/btnStartStop"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="▶ Start Singing"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- VU Meter -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🎙 MIC LEVEL"
+            android:textColor="#E94560"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <ProgressBar
+            android:id="@+id/vuMeterBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:max="100"
+            android:progress="0"
+            android:progressTint="#E94560"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- Effects Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EFFECTS"
+            android:textColor="#E94560"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- GAIN -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📢 Volume / Gain"
+                android:textColor="#CCCCCC" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvGainValue"
+                android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="80%" android:textColor="#E94560"
+                android:textSize="14sp" android:gravity="end"/>
+        </LinearLayout>
+        <SeekBar android:id="@+id/seekGain"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="100" android:progress="80"
+            android:progressTint="#E94560" android:thumbTint="#E94560"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- REVERB -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🏟 Reverb"
+                android:textColor="#CCCCCC" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvReverbValue"
+                android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="40%" android:textColor="#7EC8E3"
+                android:textSize="14sp" android:gravity="end"/>
+        </LinearLayout>
+        <SeekBar android:id="@+id/seekReverb"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="100" android:progress="40"
+            android:progressTint="#7EC8E3" android:thumbTint="#7EC8E3"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- ECHO -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🔊 Echo"
+                android:textColor="#CCCCCC" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvEchoValue"
+                android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="30%" android:textColor="#A8E6CF"
+                android:textSize="14sp" android:gravity="end"/>
+        </LinearLayout>
+        <SeekBar android:id="@+id/seekEcho"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="100" android:progress="30"
+            android:progressTint="#A8E6CF" android:thumbTint="#A8E6CF"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- PITCH -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="4dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🎵 Pitch (semitones)"
+                android:textColor="#CCCCCC" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvPitchValue"
+                android:layout_width="48dp" android:layout_height="wrap_content"
+                android:text="0" android:textColor="#FFD700"
+                android:textSize="14sp" android:gravity="end"/>
+        </LinearLayout>
+        <SeekBar android:id="@+id/seekPitch"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="12" android:progress="6"
+            android:progressTint="#FFD700" android:thumbTint="#FFD700"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Tip -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="💡 How to use:\n1. Connect Bluetooth speaker\n2. Open YouTube karaoke video\n3. Tap Start Singing\n4. Switch back to YouTube\n5. Your voice + music play through BT speaker"
+            android:textColor="#666666"
+            android:textSize="13sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginBottom="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
